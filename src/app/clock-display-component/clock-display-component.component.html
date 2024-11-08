@@ -1,1 +1,15 @@
-<p>clock-display-component works!</p>
+
+<div class="clock">
+    <div class="analog-clock" *ngIf="!currentClock.isDigital" >
+      <div class="hand hour" [style.transform]="'rotate(' + hourAngle + 'deg)'"></div>
+      <div class="hand minute" [style.transform]="'rotate(' + minuteAngle + 'deg)'"></div>
+      <div class="hand second" [style.transform]="'rotate(' + secondAngle + 'deg)'"></div>
+    </div>
+  
+    <div class="digital-clock"*ngIf="currentClock.isDigital">
+      {{ currentTime | date: 'HH:mm:ss' }}
+    </div>
+    <br>
+    {{currentClock.timeZone}}
+  </div>
+  

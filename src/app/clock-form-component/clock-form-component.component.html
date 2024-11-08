@@ -1,1 +1,12 @@
-<p>clock-form-component works!</p>
+<div class="settingsForm">
+    Time zone
+    <br>
+    <select [(ngModel)]="currentClock.timeZone" (change)="editClock()" >
+        <option *ngFor="let aZone of timeZones">{{aZone}}</option>
+    </select>
+    <br>
+    <input class="isDigital" type="checkbox" [(ngModel)]="currentClock.isDigital" (change)="editClock()" ><!--saves the checkbox value to placeholder also fires editClock() on change-->
+    <span>Digital?</span>
+    <br>
+    <button class="delete" (click)="deleteClock()"> Delete</button> <!--ties clicking the delete button to deleteClock()-->
+</div>

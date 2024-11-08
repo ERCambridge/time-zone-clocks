@@ -1,1 +1,9 @@
-<app-clock-form-component></app-clock-form-component>
+<div class="settingsComponent">
+    <ul class="settingsList">
+        <!-- create a new list item containing a clock form(settings) component for ever clock in clocklist -->
+        <li *ngFor="let aClock of clockList; let i = index">
+            <app-clock-form-component [index]="i"/> <!-- recieves the (delete) eventemitter and ties it to deleteClock(elementIndex) -->
+        </li>
+    </ul>
+    <button class ="add" (click)="addClock()">Add</button>  <!-- ties clcicking the add button to addClock() -->
+</div>

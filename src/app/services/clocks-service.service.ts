@@ -8,8 +8,8 @@ export class ClocksService {
   private clocks: clock[] =[];
 
   constructor() {
-    this.clocks.push({timeZone:"est", isDigital: true})
-    this.clocks.push({timeZone:"pst", isDigital: true})
+    this.clocks.push({timeZone:"America/New_York", isDigital: true})
+    this.clocks.push({timeZone:"America/Chicago", isDigital: false})
    }
 
   getClockList() : clock[]{

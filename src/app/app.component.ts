@@ -8,7 +8,7 @@ import { ClocksComponentComponent } from "./clocks-component/clocks-component.co
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SettingsComponentComponent, ClocksComponentComponent],
+  imports: [ SettingsComponentComponent, ClocksComponentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
