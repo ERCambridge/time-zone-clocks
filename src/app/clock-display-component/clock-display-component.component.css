@@ -1,3 +1,29 @@
+ul{
+  list-style-type: none;
+}
+li{
+  list-style-type: none;
+}
+.clock-show{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  border: 4px solid rgb(241, 112, 112);
+  color: black;
+  min-width: 120px;
+  padding: 20px;
+  margin: auto;
+}
+
+.clock-card{
+  border: 4px solid rgb(241, 112, 112);
+  color: black;
+  max-width: 250px;
+  margin: 10px; 
+  flex: 1 1 calc(50% 40px);
+}
+
 .clock {
     display: flex;
     justify-content: center;
@@ -8,9 +34,16 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: rgb(212, 214, 216);
+    border: 4px solid rgb(124, 123, 123);
+    background-image: radial-gradient(circle, rgb(255, 255, 255),rgb(202, 202, 202));
     position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px color(srgb rgb(2, 2, 2) green blue);
+    
+  }
+
+  .timeZone-Label{
+    text-align: center;
+    font-weight: bold;
   }
   
   .hand {
@@ -19,7 +52,7 @@
     top: 11%;
     transform-origin: 50% 100%;
   }
-   
+
   .hour {
     width: 6px;
     height: 80px;
@@ -39,6 +72,122 @@
   }
   
   .digital-clock {
-    font-size: 24px;
-    margin-left: 20px;
+    width: 120px;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 3px;
+    color: red;
+    border: 5px solid rgb(2, 2, 2);
+    background-color: #333;
+  }
+
+  .num{
+    height: 100%;
+    position: absolute;
+    left: calc(50% - 0.5em);
+  }
+
+  .num div{
+    width: 1em;
+    line-height: 2em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .num1{
+    transform: rotate(30deg);
+  }
+
+  .num1 div{
+    transform: rotate(-30deg);
+  }
+
+  .num2{
+    transform: rotate(60deg);
+  }
+
+  .num2 div{
+    transform: rotate(-60deg);
+  }
+  
+  .num3{
+    transform: rotate(90deg);
+  }
+
+  .num3 div{
+    transform: rotate(-90deg);
+  }
+
+  .num4{
+    transform: rotate(120deg);
+  }
+
+  .num4 div{
+    transform: rotate(-120deg);
+  }
+
+  .num5{
+    transform: rotate(150deg);
+  }
+
+  .num5 div{
+    transform: rotate(-150deg);
+  }
+
+  .num6{
+    transform: rotate(180deg);
+  }
+
+  .num6 div{
+    transform: rotate(-180deg);
+  }
+
+  .num7{
+    transform: rotate(210deg);
+  }
+
+  .num7 div{
+    transform: rotate(-210deg);
+  }
+
+  .num8{
+    transform: rotate(240deg);
+  }
+
+  .num8 div{
+    transform: rotate(-240deg);
+  }
+
+  .num9{
+    transform: rotate(270deg);
+  }
+
+  .num9 div{
+    transform: rotate(-270deg);
+  }
+
+  .num10{
+    transform: rotate(300deg);
+  }
+
+  .num10 div{
+    transform: rotate(-300deg);
+  }
+
+  .num11{
+    transform: rotate(330deg);
+  }
+
+  .num11 div{
+    transform: rotate(-330deg);
+  }
+
+  .num12{
+    transform: rotate(360deg);
+  }
+
+  .num12 div{
+    transform: rotate(-360deg);
   }

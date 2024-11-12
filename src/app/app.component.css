@@ -1,6 +1,9 @@
-ul{
-    list-style-type: none;
+.mainComponents{
+    display: flex;
+    
+    justify-content:flex-start;
 }
-li{
-    list-style: none;
+
+h1{
+    text-align: center;
 }

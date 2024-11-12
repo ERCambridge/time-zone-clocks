@@ -1,15 +1,41 @@
-
-<div class="clock">
-    <div class="analog-clock" *ngIf="!currentClock.isDigital" >
-      <div class="hand hour" [style.transform]="'rotate(' + hourAngle + 'deg)'"></div>
-      <div class="hand minute" [style.transform]="'rotate(' + minuteAngle + 'deg)'"></div>
-      <div class="hand second" [style.transform]="'rotate(' + secondAngle + 'deg)'"></div>
-    </div>
-  
-    <div class="digital-clock"*ngIf="currentClock.isDigital">
-      {{ currentTime | date: 'HH:mm:ss' }}
-    </div>
-    <br>
-    {{currentClock.timeZone}}
-  </div>
-  
+<div class="clockComponent">
+  <ul class="clockList">
+      <div class="clock-show">
+          <li *ngFor="let aClock of clockList; let i = index">
+            <div class ="clock-show">
+              <div class="clock-card">
+                <div class="clock">
+                    <div class="analog-clock" *ngIf="!aClock.isDigital" >
+                    <div class="num num1"><div>1</div></div>
+                    <div class="num num2"><div>2</div></div>
+                    <div class="num num3"><div>3</div></div>
+                  <div class="num num4"><div>4</div></div>
+                    <div class="num num5"><div>5</div></div>
+                    <div class="num num6"><div>6</div></div>
+                    <div class="num num7"><div>7</div></div>
+                  <div class="num num8"><div>8</div></div>
+                  <div class="num num9"><div>9</div></div>
+                  <div class="num num10"><div>10</div></div>
+                  <div class="num num11"><div>11</div></div>
+                  <div class="num num12"><div>12</div></div>
+                    <div class="hand hour" [style.transform]="'rotate(' + hourAngle + 'deg)'"></div>
+                    <div class="hand minute" [style.transform]="'rotate(' + minuteAngle + 'deg)'"></div>
+                    <div class="hand second" [style.transform]="'rotate(' + secondAngle + 'deg)'"></div>
+                  </div>
+                
+                  <div class="digital-clock"*ngIf="aClock.isDigital">
+                    {{ currentTime | date: 'HH:mm:ss' }}
+                  </div>
+                  <!-- <div class="timeZone-Label">
+                  {{currentClock.timeZone}}
+                  </div> -->
+                </div>
+                <div class="timeZone-Label">
+                  {{aClock.timeZone}}
+                  </div>
+              </div>
+            </div>
+          </li>
+        </div>
+    </ul>
+</div>
