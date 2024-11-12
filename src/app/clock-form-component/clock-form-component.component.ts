@@ -12,11 +12,9 @@ import { ClocksService } from '../services/clocks-service.service';
   styleUrl: './clock-form-component.component.css'
 })
 export class ClockFormComponentComponent {
-  @Input() index!: number;
-
   timeZones : string[] =[]
   clockList : clock[] = []
-  currentClock : clock = this.clockList[this.index]
+  newClock : clock = {timeZone:'America/New_York', isDigital: true}
 
   constructor(private clocksService: ClocksService){
     this.clockList = clocksService.getClockList();
@@ -24,16 +22,20 @@ export class ClockFormComponentComponent {
 
   ngOnInit() {
     this.timeZones = Intl.supportedValuesOf('timeZone'); //populate timezone array with valid values on init
-    this.currentClock = this.clockList[this.index]
+    
+  }
+  addClock(){
+    const clockToAdd = { ...this.newClock };
+    console.log(this.clockList)
+    this.clocksService.addClock(clockToAdd); // pass the new clock the user created to the clock service to be added to display list
+    this.newClock = { timeZone: 'America/New_York', isDigital: true };
   }
 
-  deleteClock(){
-   this.clocksService.deleteClock(this.index) //pass index to clock service (deleteClock)
+  deleteClock(index:number){
+   this.clocksService.deleteClock(index) //pass index to clock service (deleteClock)
   }
 
-  editClock(){
-    this.clocksService.editClock(this.index, this.currentClock)
-    console.log(`isDigital is ${this.currentClock.isDigital}`)
-    console.log(`timeZone is ${this.currentClock.timeZone}`)
+  editClock(index: number, newClock:clock){
+    this.clocksService.editClock(index, newClock)
   }
 }
