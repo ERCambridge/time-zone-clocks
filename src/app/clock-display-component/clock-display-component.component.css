@@ -9,15 +9,16 @@ li{
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-around;
-  border: 4px solid rgb(241, 112, 112);
+  /* border: 4px solid rgb(241, 112, 112); */
   color: black;
   min-width: 120px;
   padding: 20px;
   margin: auto;
+  align-items: flex-end;
 }
 
 .clock-card{
-  border: 4px solid rgb(241, 112, 112);
+  /* border: 4px solid rgb(241, 112, 112); */
   color: black;
   max-width: 250px;
   margin: 10px; 
@@ -35,15 +36,18 @@ li{
     height: 200px;
     border-radius: 50%;
     border: 4px solid rgb(124, 123, 123);
-    background-image: radial-gradient(circle, rgb(255, 255, 255),rgb(202, 202, 202));
+    background-image: radial-gradient(circle, rgb(255, 255, 255),rgb(185, 184, 184));
     position: relative;
     box-shadow: 0 4px 8px color(srgb rgb(2, 2, 2) green blue);
+    font-family: 'Times New Roman', Times, serif;
     
   }
 
   .timeZone-Label{
+    margin-top: 10px;
     text-align: center;
-    font-weight: bold;
+    font-weight: bolder;
+    font-size: 15pt;
   }
   
   .hand {
@@ -54,32 +58,43 @@ li{
   }
 
   .hour {
-    width: 6px;
+    width: 3px;
     height: 80px;
     background-color: black;
   }
   
   .minute {
-    width: 4px;
+    width: 2px;
     height: 80px;
     background-color: #333;
   }
   
   .second {
-    width: 4px;
+    width: .5px;
     height:80px;
     background-color: red;
   }
   
+  @font-face{
+    font-family:'digital-clock-font';
+    src: url('../../assets/digital-clock-font.ttf');
+   }
+
   .digital-clock {
-    width: 120px;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 30px;
+    font-family: 'digital-clock-font' ;
+    font-size: 60px;
     padding: 10px;
     border-radius: 3px;
-    color: red;
+    color: rgb(0, 255, 98);
     border: 5px solid rgb(2, 2, 2);
-    background-color: #333;
+    /* background-color: #333; */
+    background-image: radial-gradient(circle, rgb(87, 86, 86), #333);
   }
 
   .num{

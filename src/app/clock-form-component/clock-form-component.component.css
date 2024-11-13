@@ -1,18 +1,115 @@
-ul{
-    list-style-type: none;
-    padding: 0;
-  }
-  li{
-    list-style-type: none;
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 
-  h2{
-    margin: 0;
-  }
+li {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
 
-  .settingsComponent{
-    border: 3px solid black;
-    padding: 20px;
-    border-radius: 5px;
+h2 {
+  margin: 0;
+  text-align: center; /* Center the title */
+  width: 100%;
+}
 
-  }
+.settingsComponent {
+  border: 3px solid black;
+  background-image: radial-gradient(circle, rgb(223, 229, 238), rgb(143, 195, 243));
+  min-width: 420px; 
+  max-width: 100%;
+  padding: 18px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column; /* Stack the children vertically */
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.settingsList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 5px;
+  padding: 0;
+  margin: 0;
+  width: 100%; 
+}
+
+.settingsForm {
+  background-color: white;
+  max-width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.delete {
+  margin-left: auto;
+  border-style: none;
+  color: white;
+  width: 20px;
+  height: 20;
+  border-radius: 20px;
+  background-color: rgb(255, 0, 0);
+  font-weight: bold;
+}
+
+.delete:hover {
+  background-color: rgb(255, 107, 107);
+  cursor: pointer;
+}
+
+.selectionBox {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: auto;
+  max-width: 150px;
+}
+
+.selectionBox:hover {
+  cursor: pointer;
+}
+
+.digitalBox {
+  margin-right: auto;
+}
+
+.isDigital:hover {
+  cursor: pointer;
+}
+
+.add {
+  border-style: none;
+  color: white;
+  width: 30px;
+  font-size: x-large;
+  border-radius: 20px;
+  font-weight: bolder;
+  background-color: rgb(1, 236, 91);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px; /* Adds space between .settingsList and the button */
+}
+
+.add:hover {
+  background-color: rgb(141, 255, 185);
+  cursor: pointer;
+}
+
+.showSettings {
+  border-style: none;
+  background: none;
+  font-size: xx-large;
+}
+
+.showSettings:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
