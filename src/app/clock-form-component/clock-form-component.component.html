@@ -1,21 +1,25 @@
-<div class="settingsComponent">
+<button class="showSettings" (click)="showSettings()">⚙️</button>
+
+<div *ngIf="settingsEnabled" class="settingsComponent">
     <h2>Settings</h2>
     <ul class="settingsList">
         <!-- create a new list item containing a clock form(settings) component for ever clock in clocklist -->
         <li *ngFor="let aClock of clockList; let i = index">
             <div class="settingsForm">
-            Time zone
-            <br>
-            <select [(ngModel)]="aClock.timeZone" (change)="editClock(i,aClock)" >
-                <option *ngFor="let aZone of timeZones">{{aZone}}</option>
-            </select>
-            <br>
-            <input class="isDigital" type="checkbox" [(ngModel)]="aClock.isDigital" (change)="editClock(i,aClock)" ><!--saves the checkbox value to placeholder also fires editClock() on change-->
-            <span>Digital?</span>
-            <br>
-            <button class="delete" (click)="deleteClock(i)"> Delete</button> <!--ties clicking the delete button to deleteClock()-->
+                <span class="timeZoneTitle">Time Zone</span>
+                <br>
+                <button class="delete" (click)="deleteClock(i)"> X</button> <!--ties clicking the delete button to deleteClock()-->
+                <select class="selectionBox" [(ngModel)]="aClock.timeZone" (change)="editClock(i,aClock)" >
+                    <option *ngFor="let aZone of timeZones">{{aZone}}</option>
+                </select>
+                <br>
+                <div class="digitalBox">
+                    <input class="isDigital" type="checkbox" [(ngModel)]="aClock.isDigital" (change)="editClock(i,aClock)" ><!--saves the checkbox value to placeholder also fires editClock() on change-->
+                    <span>Digital?</span>
+                </div>               
             </div>
         </li>
     </ul>
-<button class ="add" (click)="addClock()">Add</button>  <!-- ties clcicking the add button to addClock() -->
+<button class ="add" (click)="addClock()">+</button>  <!-- ties clcicking the add button to addClock() -->
 </div>
+

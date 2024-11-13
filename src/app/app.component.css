@@ -2,8 +2,11 @@
     display: flex;
     
     justify-content:flex-start;
+    align-items: flex-start;
 }
 
 h1{
     text-align: center;
+    font-size: 40pt;
+    margin: 10px;
 }

@@ -12,18 +12,15 @@ import { ClocksService } from '../services/clocks-service.service';
   styleUrl: './clock-form-component.component.css'
 })
 export class ClockFormComponentComponent {
-  timeZones : string[] =[]
+  timeZones : string[] = Intl.supportedValuesOf('timeZone'); //populate timezone array with valid values
   clockList : clock[] = []
   newClock : clock = {timeZone:'America/New_York', isDigital: true}
+  settingsEnabled : boolean = true
 
   constructor(private clocksService: ClocksService){
     this.clockList = clocksService.getClockList();
   }
 
-  ngOnInit() {
-    this.timeZones = Intl.supportedValuesOf('timeZone'); //populate timezone array with valid values on init
-    
-  }
   addClock(){
     const clockToAdd = { ...this.newClock };
     console.log(this.clockList)
@@ -37,5 +34,14 @@ export class ClockFormComponentComponent {
 
   editClock(index: number, newClock:clock){
     this.clocksService.editClock(index, newClock)
+  }
+
+  showSettings(){
+    if(this.settingsEnabled == true){
+      this.settingsEnabled = false
+    }
+    else if(this.settingsEnabled == false){
+      this.settingsEnabled = true
+    }
   }
 }
